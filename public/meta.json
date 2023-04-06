@@ -1,0 +1,75 @@
+{
+  "name": "next.js-blog-demo",
+  "plugins": [
+    {
+      "id": 1,
+      "name": "TailwindCSS",
+      "description": "A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.",
+      "image": "https://www.alphr.com/wp-content/uploads/2017/07/11_e_frnt_70mm-1980x1518.jpg",
+      "url": "https://tailwindcss.com/docs"
+    },
+    {
+      "id": 2,
+      "name": "Styled Components",
+      "description": "Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components.",
+      "image": "https://www.alphr.com/wp-content/uploads/2017/07/11_e_frnt_70mm-1980x1518.jpg",
+      "url": "https://styled-components.com/docs"
+    },
+    {
+      "id": 3,
+      "name": "Prettier",
+      "description": "An opinionated code formatter; Supports many languages; Integrates with most editors.",
+      "image": "https://www.alphr.com/wp-content/uploads/2017/07/11_e_frnt_70mm-1980x1518.jpg",
+      "url": "https://prettier.io/docs/en/index.html"
+    },
+    {
+      "id": 4,
+      "name": "Prettier",
+      "description": "An opinionated code formatter; Supports many languages; Integrates with most editors.",
+      "image": "https://www.alphr.com/wp-content/uploads/2017/07/11_e_frnt_70mm-1980x1518.jpg",
+      "url": "https://prettier.io/docs/en/index.html"
+    },
+    {
+      "id": 5,
+      "name": "Prettier",
+      "description": "An opinionated code formatter; Supports many languages; Integrates with most editors.",
+      "image": "https://www.alphr.com/wp-content/uploads/2017/07/11_e_frnt_70mm-1980x1518.jpg",
+      "url": "https://prettier.io/docs/en/index.html"
+    },
+    {
+      "id": 6,
+      "name": "Prettier",
+      "description": "An opinionated code formatter; Supports many languages; Integrates with most editors.",
+      "image": "https://www.alphr.com/wp-content/uploads/2017/07/11_e_frnt_70mm-1980x1518.jpg",
+      "url": "https://prettier.io/docs/en/index.html"
+    },
+    {
+      "id": 7,
+      "name": "Prettier",
+      "description": "An opinionated code formatter; Supports many languages; Integrates with most editors.",
+      "image": "https://www.alphr.com/wp-content/uploads/2017/07/11_e_frnt_70mm-1980x1518.jpg",
+      "url": "https://prettier.io/docs/en/index.html"
+    },
+    {
+      "id": 8,
+      "name": "Prettier",
+      "description": "An opinionated code formatter; Supports many languages; Integrates with most editors.",
+      "image": "https://www.alphr.com/wp-content/uploads/2017/07/11_e_frnt_70mm-1980x1518.jpg",
+      "url": "https://prettier.io/docs/en/index.html"
+    },
+    {
+      "id": 9,
+      "name": "Prettier",
+      "description": "An opinionated code formatter; Supports many languages; Integrates with most editors.",
+      "image": "https://www.alphr.com/wp-content/uploads/2017/07/11_e_frnt_70mm-1980x1518.jpg",
+      "url": "https://prettier.io/docs/en/index.html"
+    },
+    {
+      "id": 10,
+      "name": "Prettier",
+      "description": "An opinionated code formatter; Supports many languages; Integrates with most editors.",
+      "image": "https://www.alphr.com/wp-content/uploads/2017/07/11_e_frnt_70mm-1980x1518.jpg",
+      "url": "https://prettier.io/docs/en/index.html"
+    }
+  ]
+}
