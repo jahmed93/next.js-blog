@@ -1,4 +1,7 @@
 import styled, {keyframes} from 'styled-components';
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import data from "@/public/meta.json";
 
 const Container = styled.div`
@@ -20,25 +23,6 @@ const Container = styled.div`
   }
 `;
 
-const fadeinup = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-const Column = styled.div`
-  background-color: #ffffff;
-  border-left: 1px solid #ddd;
-  transform: translateY(20px);
-  animation: ${fadeinup} 0.5s ease-out forwards;
-`;
-
 const BlogImage = styled.img`
 	width: 100%;
 `;
@@ -58,16 +42,53 @@ const Description = styled.p`
   padding: 0 20px;
 `;
 
-const BlogsList = ({ children }) => {
+const Column = ({ children, index }) => {
+	const control = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+      console.log('index', index)
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+
+  const animationVariant = {
+		visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.5 } },
+		hidden: { opacity: 0, y: 100 }
+	}
+
+  return (
+    <motion.div
+      className="box"
+      ref={ref}
+      variants={animationVariant}
+      initial="hidden"
+      animate={control}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+const BlogsList = () => {
+
   return (
     <Container>
-    	{(data?.plugins ?? []).map((plugin) => (
-        <Column key={plugin.id}>
-        	<BlogImage src={plugin.image} />
-          <Title>{plugin.name}</Title>
-          <Description>{plugin.description}</Description>
-        </Column>
-      ))}
+    	{(data?.plugins ?? []).map((plugin, index) => {
+    		return (
+	        <Column key={plugin.id} index={index}>
+	        	<BlogImage src={plugin.image} />
+	          <Title>{plugin.name}</Title>
+	          <Description>{plugin.description}</Description>
+	        </Column>
+        )
+      })}
     </Container>
   );
 };
