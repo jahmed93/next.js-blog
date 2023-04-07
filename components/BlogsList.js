@@ -6,34 +6,28 @@ import data from "@/public/meta.json";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
 
   width: 100%;
-  margin: 0 auto;
+  margin: 50px auto;
 
   @media (min-width: 576px) {
-	  .container {
-	    max-width: 540px;
-	  }
+    max-width: 540px;
+	  grid-template-columns: repeat(2, 1fr);
 	}
 
 	@media (min-width: 768px) {
-	  .container {
-	    max-width: 720px;
-	  }
+    max-width: 720px;
 	}
 
 	@media (min-width: 992px) {
-	  .container {
-	    max-width: 960px;
-	  }
+    max-width: 960px;
+	  grid-template-columns: repeat(3, 1fr);
 	}
 
 	@media (min-width: 1200px) {
-	  .container {
-	    max-width: 1140px;
-	  }
+	   max-width: 1140px;
 	}
 `;
 
@@ -78,6 +72,7 @@ const Column = ({ children, delay }) => {
 
   return (
     <motion.div
+    	style={{ margin: '10px' }}
       className="box"
       ref={ref}
       variants={animationVariant}
