@@ -66,7 +66,7 @@ const BlogsList = () => {
     <Grid>
     	{(data?.plugins ?? []).map((plugin, index) => {
     		return (
-	        <Column key={plugin.id} delay={(index % 3) * 0.2} span={index === 0 ? 2 : 1}>
+	        <Column key={plugin.id} delay={(index < 3) ? (index * 0.2) : (index + 2 % 3) * 0.2} span={index === 0 ? 2 : 1}>
 	        	<Image src={plugin.image} alt="plugin.title" />
 	          <Title>{plugin.name}</Title>
 	          <Description>{plugin.description}</Description>
