@@ -58,7 +58,7 @@ const Column = ({ children, delay }) => {
   }, [control, inView]);
 
   const animationVariant = {
-		visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay } },
+		visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay } },
 		hidden: { opacity: 0, y: 100 }
 	}
 
