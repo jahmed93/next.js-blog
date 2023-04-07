@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 20px;
-
+  display: block;
   width: 100%;
   margin: 50px auto;
 
   @media (min-width: 576px) {
     max-width: 540px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
     grid-template-columns: repeat(2, 1fr);
   }
 
