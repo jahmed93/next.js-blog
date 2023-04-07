@@ -1,16 +1,21 @@
 import styled from 'styled-components';
 
-const StyledImageContainer = styled.div`
+const Wrapper = styled.div`
   overflow: hidden;
   width: 100%;
   height: 250px;
-  transition: transform 0.2s ease-in-out;
-  position: relative;
-  display: inline-block;
 
   @media (min-width: 992px) {
     height: 350px;
   }
+`;
+
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+  display: inline-block;
 
   &:hover::before {
     content: "";
@@ -27,6 +32,10 @@ const StyledImageContainer = styled.div`
   &:hover::before {
     opacity: 1;
   }
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
 const StyledImage = styled.img`
@@ -37,9 +46,11 @@ const StyledImage = styled.img`
 
 const Image = ({ src, alt }) => {
   return (
-    <StyledImageContainer>
-      <StyledImage src={src} alt={alt} />
-    </StyledImageContainer>
+    <Wrapper>
+      <ImageContainer>
+        <StyledImage src={src} alt={alt} />
+      </ImageContainer>
+    </Wrapper>
   );
 };
 

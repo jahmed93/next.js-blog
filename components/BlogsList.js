@@ -27,7 +27,7 @@ const Item = styled(motion.div)`
 	grid-column: span ${props => props.span};
 `;
 
-const Column = ({ children, delay, span }) => {
+const Column = ({ children, index, span }) => {
 	const control = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.2,
@@ -41,6 +41,8 @@ const Column = ({ children, delay, span }) => {
       control.start("hidden");
     }
   }, [control, inView]);
+
+  const delay = (index < 3) ? (index * 0.2) : (index + 2 % 3) * 0.1
 
   const animationVariant = {
 		visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay } },
@@ -66,7 +68,7 @@ const BlogsList = () => {
     <Grid>
     	{(data?.plugins ?? []).map((plugin, index) => {
     		return (
-	        <Column key={plugin.id} delay={(index < 3) ? (index * 0.2) : (index + 2 % 3) * 0.2} span={index === 0 ? 2 : 1}>
+	        <Column key={plugin.id} index={index} span={index === 0 ? 2 : 1}>
 	        	<Image src={plugin.image} alt="plugin.title" />
 	          <Title>{plugin.name}</Title>
 	          <Description>{plugin.description}</Description>
