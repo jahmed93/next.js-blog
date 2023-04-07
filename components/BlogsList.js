@@ -10,17 +10,31 @@ const Container = styled.div`
   gap: 20px;
 
   width: 100%;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 20px;
+  margin: 0 auto;
 
-  @media (min-width: 768px) {
-    padding: 0 40px;
-  }
+  @media (min-width: 576px) {
+	  .container {
+	    max-width: 540px;
+	  }
+	}
 
-  @media (min-width: 1200px) {
-    padding: 0 80px;
-  }
+	@media (min-width: 768px) {
+	  .container {
+	    max-width: 720px;
+	  }
+	}
+
+	@media (min-width: 992px) {
+	  .container {
+	    max-width: 960px;
+	  }
+	}
+
+	@media (min-width: 1200px) {
+	  .container {
+	    max-width: 1140px;
+	  }
+	}
 `;
 
 const BlogImage = styled.img`
