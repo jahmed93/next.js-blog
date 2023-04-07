@@ -1,7 +1,7 @@
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import data from "@/public/meta.json";
 
 const Container = styled.div`
@@ -42,7 +42,7 @@ const Description = styled.p`
   padding: 0 20px;
 `;
 
-const Column = ({ children, index }) => {
+const Column = ({ children, delay }) => {
 	const control = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.2,
@@ -52,14 +52,13 @@ const Column = ({ children, index }) => {
   useEffect(() => {
     if (inView) {
       control.start("visible");
-      console.log('index', index)
     } else {
       control.start("hidden");
     }
   }, [control, inView]);
 
   const animationVariant = {
-		visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.5 } },
+		visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay } },
 		hidden: { opacity: 0, y: 100 }
 	}
 
@@ -82,7 +81,7 @@ const BlogsList = () => {
     <Container>
     	{(data?.plugins ?? []).map((plugin, index) => {
     		return (
-	        <Column key={plugin.id} index={index}>
+	        <Column key={plugin.id} delay={(index % 3) * 0.2}>
 	        	<BlogImage src={plugin.image} />
 	          <Title>{plugin.name}</Title>
 	          <Description>{plugin.description}</Description>
