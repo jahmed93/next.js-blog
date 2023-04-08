@@ -175,10 +175,10 @@ const GalleryWithSlider = ({ photos }) => {
     setSliderIndex(index);
   };
   const handleColumns = (containerWidth) => {
-    let columns = 2;
+    let columns = 1;
+    if (containerWidth >= 576) columns = 2;
     if (containerWidth >= 768) columns = 3;
     if (containerWidth >= 995) columns = 4;
-    if (containerWidth >= 1500) columns = 5;
     setColumnsNum(columns);
     return columns;
   };
@@ -199,7 +199,7 @@ const GalleryWithSlider = ({ photos }) => {
     <MainContainer>
       <Gallery
         renderImage={imageRenderer}
-        margin={columnsNum === null || columnsNum !== 2 ? 15 : 5}
+        margin={15}
         photos={photos}
         columns={handleColumns}
         direction={"column"}
